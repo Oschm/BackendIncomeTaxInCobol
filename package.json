@@ -1,0 +1,33 @@
+{
+  "name": "incometaxcobol",
+  "version": "1.0.0",
+  "description": "This nodejs Express APP provides an API that uses COBOL to calculate the income tax depending on parameters Age, Marital Status and Age.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Oschm/BackendIncomeTaxInCobol.git"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "cobol",
+    "mocha"
+  ],
+  "author": "Oliver Schmidt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Oschm/BackendIncomeTaxInCobol/issues"
+  },
+  "homepage": "https://github.com/Oschm/BackendIncomeTaxInCobol#readme",
+  "dependencies": {
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "chai": "^4.3.10",
+    "mocha": "^10.2.0"
+  }
+}
