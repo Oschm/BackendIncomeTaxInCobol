@@ -15,3 +15,24 @@ The compilation of the COBOL code is done using this precompiled binary of gnuco
 ## Setup
 
 Install gnucobol from archive and set the installation directory as "GNUCOBOL_DIRECTORY" in .env file.
+Also of course run
+
+```
+npm install
+```
+
+to install node dependancies.
+
+To run server run
+
+```
+node run start
+```
+
+## Testing
+
+test/test.js contains implemented tests for various age, income values. The test can be run using
+
+```
+node run test
+```

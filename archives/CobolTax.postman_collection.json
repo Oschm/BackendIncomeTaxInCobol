@@ -1,0 +1,72 @@
+{
+	"info": {
+		"_postman_id": "e7f0558b-25af-4a7d-b231-6b7cea6f5b67",
+		"name": "CobolTax",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12549508"
+	},
+	"item": [
+		{
+			"name": "Not Implemented",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}",
+					"host": [
+						"{{BASE_URL}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "calculateIncomeTax",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"grossIncome\" = 30000.00,\r\n    \"maritalStatus\" = false,\r\n    \"year\" = 2023\r\n}"
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/calculateIncomeTax",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"calculateIncomeTax"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}
