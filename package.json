@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "test": "mocha"
+    "test": "mocha",
+    "nodemon": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -24,11 +25,13 @@
   },
   "homepage": "https://github.com/Oschm/BackendIncomeTaxInCobol#readme",
   "dependencies": {
+    "cobol": "^2.0.3",
     "dotenv": "^16.3.1",
     "express": "^4.18.2"
   },
   "devDependencies": {
     "chai": "^4.3.10",
-    "mocha": "^10.2.0"
+    "mocha": "^10.2.0",
+    "nodemon": "^3.0.1"
   }
 }
