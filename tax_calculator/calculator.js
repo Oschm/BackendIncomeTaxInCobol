@@ -4,12 +4,17 @@ const {
     resolve
 } = require('path');
 
-const basePath = process.env.GNUCOBOL_DIRECTORY
-process.env["COB_MAIN_DIR"] = basePath;
-process.env["COB_CONFIG_DIR"] = basePath + "\\config";
-process.env["COB_CFLAGS"] = '-I"' + basePath + '\\include"';
-process.env["COB_LDFLAGS"] = '-L"' + basePath + '\\lib"';
-
+const runEnvironment = process.env.NODE_ENV;
+if (runEnvironment !== "production") {
+    const basePath = runEnvironment === "production" ? '/usr/bin' : process.env.COBOL_DIRECTORY;
+    console.log("runEnvironment: " + runEnvironment);
+    const delimiter = runEnvironment === "production" ? '/' : '\\';
+    process.env["GNUCOBOL_DIRECTORY"] = basePath;
+    process.env["COB_MAIN_DIR"] = runEnvironment === "production" ? '/usr/bin' : basePath;
+    process.env["COB_CONFIG_DIR"] = basePath + delimiter + "config";
+    process.env["COB_CFLAGS"] = '-I"' + basePath + delimiter + 'include"';
+    process.env["COB_LDFLAGS"] = '-L"' + basePath + delimiter + 'lib"';
+}
 
 // Dependencies
 var Cobol = require("../lib");
