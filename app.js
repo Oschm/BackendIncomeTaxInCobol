@@ -2,10 +2,19 @@ require('dotenv').config();
 
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const app = express();
 const port = process.env.PORT;
-
+//add cors options to prevent cors errors in browser
+const corsOptions = {
+  origin: '*',
+  methods: ['POST, GET, OPTIONS, PUT, DELETE'],
+  allowedHeaders: ['X-Requested-With, Content-Type, X-Auth-Token, Origin, Authorization'],
+  exposedHeaders: [],
+  credentials: true
+};
+app.use(cors(corsOptions));
 // Parse JSON requests
 app.use(bodyParser.json());
 
