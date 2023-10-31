@@ -33,7 +33,6 @@ app.post('/calculateIncomeTax', (req, res) => {
     year
   } = req.body;
 
-  // Default response
   	taxCalculator.calculateIncomeTax(grossIncome, maritalStatus, year, function (result) {
     console.log("writing result: " + JSON.stringify(result));
     res.json(result);
@@ -56,6 +55,7 @@ app.get('/cobolTest', (req, res) => {
 
 // Default route for unimplemented routes
 app.use((req, res) => {
+  console.log("accessing default route");
   res.status(501).json({
     error: 'Not Implemented'
   });
