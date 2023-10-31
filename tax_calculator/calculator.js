@@ -4,13 +4,16 @@ const {
     resolve
 } = require('path');
 
+
+//in windows the binary of gnucobol needs specific environment variables to be set for every execution
+//linux doesnt need this
 const runEnvironment = process.env.NODE_ENV;
-if (runEnvironment !== "production") {
-    const basePath = runEnvironment === "production" ? '/usr/bin' : process.env.COBOL_DIRECTORY;
+if (runEnvironment === "windows") {
+    const basePath = process.env.COBOL_DIRECTORY;
     console.log("runEnvironment: " + runEnvironment);
-    const delimiter = runEnvironment === "production" ? '/' : '\\';
+    const delimiter = '\\';
     process.env["GNUCOBOL_DIRECTORY"] = basePath;
-    process.env["COB_MAIN_DIR"] = runEnvironment === "production" ? '/usr/bin' : basePath;
+    process.env["COB_MAIN_DIR"] = basePath;
     process.env["COB_CONFIG_DIR"] = basePath + delimiter + "config";
     process.env["COB_CFLAGS"] = '-I"' + basePath + delimiter + 'include"';
     process.env["COB_LDFLAGS"] = '-L"' + basePath + delimiter + 'lib"';

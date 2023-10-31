@@ -8,15 +8,14 @@ ARG NODE_VERSION=18.16.1
 
 FROM ubuntu
 
-# Use production node environment by default.
-ENV NODE_ENV production
-
+# Add user and give him rights to create and delelte files (used during compilation of cobol code)
 RUN useradd -ms /bin/bash newuser
 WORKDIR /usr/src/app
 RUN chown -R newuser:newuser /usr/src/app
 RUN chmod 755 /usr/src/app
 
-RUN apt update
+#Update linux and install required components
+RUN apt-get update
 RUN apt-get install -y nodejs
 RUN apt install -y npm
 # Download dependencies as a separate step to take advantage of Docker's caching.
@@ -27,7 +26,7 @@ RUN --mount=type=bind,source=package.json,target=package.json \
     --mount=type=bind,source=package-lock.json,target=package-lock.json \
     --mount=type=cache,target=/root/.npm \
     npm ci --omit=dev
-
+# install gnucobol
 RUN apt update
 RUN apt install -y gnucobol
 # Run the application as a non-root user.
@@ -42,5 +41,5 @@ EXPOSE 3000
 # Run the application.
 CMD npm run start
 
-# Use production node environment by default. make sure environmen variable is set correctly
-ENV NODE_ENV production
+# Use linux node environment by default.
+ENV NODE_ENV linux
