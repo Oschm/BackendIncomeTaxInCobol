@@ -13,7 +13,7 @@ It is a sample app to test the [node COBOL](https://github.com/IonicaBizau/node-
 It implements the same logic for german income tax as this [offical income tax calculator](https://www.bmf-steuerrechner.de/ekst/eingabeformekst.xhtml).
 Detailed logic explained [here](https://www.bundesfinanzministerium.de/Content/DE/Downloads/Steuern/Steuerarten/Lohnsteuer/Programmablaufplan/2023-06-09-geaenderte-PAP-2023-anwendung-ab-dem-1-juli-2023-anlage-1.pdf?__blob=publicationFile&v=5).
 
-It will be used as a backend server for my official CV found in this [Repo](https://github.com/Oschm/Vue-CV) or hosted [here](https://oschm.github.io/Vue-CV/showcase).
+It will be used as a backend server for my official CV found in this [Repo](https://github.com/Oschm/Vue-CV) or hosted in section SHOWCASE here [here](https://oschm.github.io/Vue-CV) (sorry github pages doesnt support routing for single page applications :D).
 
 ## Dependecies
 
