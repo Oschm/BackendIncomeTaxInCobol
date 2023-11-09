@@ -25,7 +25,6 @@ const taxCalculator = new TaxCalculator();
 // Route for calculating income tax
 app.post('/calculateIncomeTax', (req, res) => {
 
-  //console.log("enter /calculateIncomeTax with body: " + JSON.stringify(req.body));
   // Read the request body
   const {
     grossIncome,
@@ -39,19 +38,24 @@ app.post('/calculateIncomeTax', (req, res) => {
   });
 });
 
-// Route for calculating income tax
+// Route for testing cobol implementation
 app.get('/cobolTest', (req, res) => {
 
-
-
-  // Default response
   const result = taxCalculator.testCobol(function (result) {
     console.log("writing result: " + JSON.stringify(result));
     res.json(result);
   });
 
+});
+
+// Route for getting status and checking server health
+app.get('/status', (req, res) => {
+
+  res.json({server: "awake"});
+
 
 });
+
 
 // Default route for unimplemented routes
 app.use((req, res) => {
