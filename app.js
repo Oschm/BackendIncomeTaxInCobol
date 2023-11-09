@@ -48,21 +48,11 @@ app.get('/cobolTest', (req, res) => {
 
 });
 
-// Route for getting status and checking server health
-app.get('/status', (req, res) => {
-
-  res.json({server: "awake"});
-
-
-});
-
 
 // Default route for unimplemented routes
 app.use((req, res) => {
   console.log("accessing default route");
-  res.status(501).json({
-    error: 'Not Implemented'
-  });
+  res.json({server: "awake"});
 });
 
 app.listen(port, () => {
