@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "e7f0558b-25af-4a7d-b231-6b7cea6f5b67",
+		"_postman_id": "858a6ba9-cdf7-494c-b9ea-19d6b9b82d3b",
 		"name": "CobolTax",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "12549508"
@@ -36,6 +36,23 @@
 					],
 					"path": [
 						"calculateIncomeTax"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cobolTest",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/cobolTest",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"cobolTest"
 					]
 				}
 			},
